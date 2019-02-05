@@ -160,9 +160,11 @@ module.exports = {
 
     defaultDrawRangeValus: {
         min: 5,
-        max: 30,
-        value: 12
+        max: 25,
+        value: 8
     },
+    defaultDrawColor: '#00a9ff',
+    defaultDrawOpacity: 1,
 
     defaultShapeStrokeValus: {
         realTimeEvent: false,
@@ -170,13 +172,14 @@ module.exports = {
         max: 300,
         value: 3
     },
-
+    defaultShapeColor: '#00a9ff',
     defaultTextRangeValus: {
         realTimeEvent: true,
         min: 10,
         max: 100,
-        value: 50
+        value: 28
     },
+    defaultTextColor: '#00a9ff',
 
     defaultFilterRangeValus: {
         tintOpacityRange: {

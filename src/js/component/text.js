@@ -12,11 +12,13 @@ import util from '../util';
 const events = consts.eventNames;
 
 const defaultStyles = {
+    fontFamily: '"Open Sans", sans-serif',
     fill: '#000000',
     left: 0,
     top: 0
 };
 const resetStyles = {
+    fontFamily: '"Open Sans", sans-serif',
     fill: '#000000',
     fontStyle: 'normal',
     fontWeight: 'normal',
@@ -27,6 +29,7 @@ const {browser} = snippet;
 
 const TEXTAREA_CLASSNAME = 'tui-image-eidtor-textarea';
 const TEXTAREA_STYLES = util.makeStyleText({
+    fontFamily: '"Open Sans", sans-serif',
     position: 'absolute',
     padding: 0,
     display: 'none',
@@ -222,6 +225,11 @@ class Text extends Component {
 
             this._setInitPos(options.position);
 
+            if (options.styles) {
+                options.styles.fontFamily = 'Helvetica, sans-serif';
+            } else {
+                options.styles = {fontFamily: 'Helvetica, sans-serif'};
+            }
             if (options.styles) {
                 styles = snippet.extend(styles, options.styles);
             }

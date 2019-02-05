@@ -3,8 +3,7 @@ import Colorpicker from './tools/colorpicker';
 import Range from './tools/range';
 import Submenu from './submenuBase';
 import templateHtml from './template/submenu/draw';
-import {defaultDrawRangeValus} from '../consts';
-const DRAW_OPACITY = 0.7;
+import {defaultDrawRangeValus, defaultDrawColor, defaultDrawOpacity} from '../consts';
 
 /**
  * Draw ui class
@@ -23,7 +22,7 @@ class Draw extends Submenu {
 
         this._els = {
             lineSelectButton: this.selector('#tie-draw-line-select-button'),
-            drawColorpicker: new Colorpicker(this.selector('#tie-draw-color'), '#00a9ff', this.toggleDirection),
+            drawColorpicker: new Colorpicker(this.selector('#tie-draw-color'), defaultDrawColor, this.toggleDirection),
             drawRange: new Range(this.selector('#tie-draw-range'), defaultDrawRangeValus),
             drawRangeValue: this.selector('#tie-draw-range-value')
         };
@@ -54,7 +53,7 @@ class Draw extends Submenu {
     setDrawMode() {
         this.actions.setDrawMode(this.type, {
             width: this.width,
-            color: util.getRgb(this.color, DRAW_OPACITY)
+            color: util.getRgb(this.color, defaultDrawOpacity)
         });
     }
 

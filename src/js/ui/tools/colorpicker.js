@@ -38,7 +38,8 @@ class Colorpicker {
         this.picker = tuiColorPicker.create({
             container: this.pickerElement,
             preset: PICKER_COLOR,
-            color: defaultColor
+            color: defaultColor,
+            usageStatistics: false
         });
 
         this._addEvent(colorpickerElement);

@@ -10,7 +10,6 @@ import action from './action';
 import commandFactory from './factory/command';
 import Graphics from './graphics';
 import consts from './consts';
-import {sendHostName} from './util';
 
 const events = consts.eventNames;
 const commands = consts.commandNames;
@@ -44,7 +43,7 @@ const {isUndefined, forEach, CustomEvents} = snippet;
  *  @param {number} [options.selectionStyle.lineWidth] - selection line width
  *  @param {string} [options.selectionStyle.borderColor] - selection border color
  *  @param {number} [options.selectionStyle.rotatingPointOffset] - selection rotating point length
- *  @param {Boolean} [options.usageStatistics=true] - Let us know the hostname. If you don't want to send the hostname, please set to false.
+ *  @param {Boolean} [options.usageStatistics=false] - Let us know the hostname. If you don't want to send the hostname, please set to false.
  * @example
  * var ImageEditor = require('tui-image-editor');
  * var blackTheme = require('./js/theme/black-theme.js');
@@ -75,7 +74,7 @@ class ImageEditor {
     constructor(wrapper, options) {
         options = snippet.extend({
             includeUI: false,
-            usageStatistics: true
+            usageStatistics: false
         }, options);
 
         this.mode = null;
@@ -143,9 +142,9 @@ class ImageEditor {
             applyGroupSelectionStyle: options.applyGroupSelectionStyle
         });
 
-        if (options.usageStatistics) {
-            sendHostName();
-        }
+        // if (options.usageStatistics) {
+        //     sendHostName();
+        // }
 
         if (this.ui) {
             this.ui.initCanvas();
