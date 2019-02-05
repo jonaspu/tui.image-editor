@@ -3,7 +3,7 @@ import Colorpicker from './tools/colorpicker';
 import Submenu from './submenuBase';
 import templateHtml from './template/submenu/icon';
 import {isSupportFileApi} from '../util';
-import {defaultIconPath} from '../consts';
+import {defaultIconPath, defaultIconColor} from '../consts';
 
 /**
  * Icon ui class
@@ -26,7 +26,7 @@ class Icon extends Submenu {
         this._els = {
             registIconButton: this.selector('#tie-icon-image-file'),
             addIconButton: this.selector('#tie-icon-add-button'),
-            iconColorpicker: new Colorpicker(this.selector('#tie-icon-color'), '#ffbb3b', this.toggleDirection)
+            iconColorpicker: new Colorpicker(this.selector('#tie-icon-color'), defaultIconColor, this.toggleDirection)
         };
     }
 
