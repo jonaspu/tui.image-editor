@@ -236,12 +236,16 @@ class Text extends Component {
 
             if (this.useItext) {
                 newText = new fabric.IText(text, styles);
+                newText.lockRotation = true;
+                newText.setControlsVisibility({mtr: false});
                 selectionStyle = snippet.extend({}, selectionStyle, {
                     originX: 'left',
                     originY: 'top'
                 });
             } else {
                 newText = new fabric.Text(text, styles);
+                newText.lockRotation = true;
+                newText.setControlsVisibility({mtr: false});
             }
 
             newText.set(selectionStyle);
