@@ -368,9 +368,8 @@ class Shape extends Component {
 
         if (shape) {
             resizeHelper.adjustOriginToCenter(shape);
+            this.fire(eventNames.ADD_OBJECT_AFTER, this.graphics.createObjectProperties(shape));
         }
-
-        this.fire(eventNames.ADD_OBJECT_AFTER, this.graphics.createObjectProperties(shape));
 
         canvas.off({
             'mouse:move': this._handlers.mousemove,
